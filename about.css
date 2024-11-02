@@ -1,0 +1,559 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #885239;
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.dog-hand {
+    width: 100%; /* Allow it to take the full width of its container */
+    max-width: 50px; /* Set a maximum width to prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 8px;
+}
+
+.logo p {
+    font-size: 30px; /* Default font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4d8d75;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+    z-index: 9999;
+}
+
+nav ul.open {
+    width: 60%; /* Show on mobile */
+}
+
+nav ul li {
+    margin: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+/* Menu Open Icon */
+#menu-open {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 10000;
+}
+
+/* Menu Close Icon */
+#menu-close {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+
+.hero .background-image {
+    width: 100%;
+    height: 80vh;
+}
+
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.hero-text h1 {
+    font-size: 3em;
+}
+
+
+.hero-text p {
+    font-size: 1.5em;
+}
+
+
+.hero-text button {
+    background-color: #4d8d75;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+
+/* Mission Process Section */
+.mission-process {
+    padding: 90px; /* Reduced padding for better spacing */
+    background-color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.mission-head{
+    padding-bottom: 1px;
+}
+
+.mission-process h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a6b35;
+}
+
+
+.mission-process p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #6c757d;
+}
+
+
+.mission-process .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto; /* Center the entire container */
+}
+
+
+.mission-process .step {
+    flex: 1 1 30%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f1f3f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+.mission-process .step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.mission-process .step i {
+    font-size: 3em;
+    color: #3a6b35;
+    margin-bottom: 15px;
+}
+
+
+.mission-process .step h2 {
+    font-size: 1.8em;
+    color: #3a6b35;
+    margin-bottom: 10px;
+}
+
+
+.mission-process .step p {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+.mission-process-bottom{
+    padding-bottom:1px;
+}
+
+/* Meet Team Section */
+.meet-team-section {
+    padding: 50px 20px; /* Padding for spacing */
+    margin-bottom: 0px;
+    background-color: #fff; /* Added background for contrast */
+}
+
+
+.meet-team-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #3a6b35;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meet-team-section-head{
+    padding-bottom: 1px;
+}
+
+.mission-process-steps{
+    padding-top:0;
+}
+
+.meet-team-section-body{
+    padding-top: 0;
+}
+
+.meet-team-section p {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+
+.team {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    justify-content: center; /* Center team members */
+    gap: 20px; /* Space between team members */
+}
+
+
+.team-member {
+    flex: 1 1 30%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.person-1 img{
+    object-position: 50% 12%;
+}
+
+
+.person-2 img{
+    object-position: 50% 15%;
+}
+
+
+.person-3 img{
+    object-position: 50% 10%;
+
+
+}
+
+
+.team-member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+
+.team-member p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #4d8d75;
+    color: white;
+    padding: 20px 0; /* Adjust padding as needed */
+    text-align: center;
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    align-items: center; /* Center footer items */
+    width: 100%; /* Ensure full width */
+    position: relative; /* Add relative positioning */
+    left: 0; /* Align left */
+    right: 0; /* Align right */
+    margin: 0; /* Remove any margin */
+    justify-content: center;
+}
+
+
+.footer-links, .social-media {
+    margin-bottom: 10px;
+}
+
+
+.footer-links a, .social-media a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+.footer-links a:hover, .social-media a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Adjustments */
+
+@media (min-width: 1110px) {
+    nav ul {
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        background-color: #4d8d75;
+        height: auto;
+    }
+
+    #menu-open {
+        display: none; /* Hide burger menu on larger screens */
+    }
+}
+
+
+@media (max-width: 992px) {
+    .mission-process .steps {
+        flex-direction: column; /* Stack steps vertically */
+    }
+    .team {
+        flex-direction: column; /* Stack team members vertically */
+    }
+
+
+    .team-member {
+        flex: 1 1 100%; /* Full width for team members on small screens */
+    }
+    .logo p {
+        font-size: 26px; /* Even smaller font size */
+    }
+    #menu-open {
+        display: block; /* Show burger menu for medium/small screens */
+    }
+
+
+    nav ul {
+        flex-direction: column;
+        width: 0;
+        height: 100%;
+        background-color: #4d8d75;
+    }
+
+
+    nav ul.open {
+        width: 60%;
+    }
+
+
+    #menu-close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    footer p {
+        font-size: 1rem; /* Adjust paragraph font size for smaller screens */
+    }
+    footer a {
+        font-size: 0.9rem; /* Adjust link font size for smaller screens */
+    }
+    .logo p {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    .dog-hand {
+        min-width: 12%; /* Increase the logo size for smaller screens */
+    }
+    .mission-process h1 {
+        font-size: 2em;
+    }
+
+    .mission-process p {
+        font-size: 1em;
+    }
+
+    .mission-process .steps {
+        gap: 15px;
+    }
+
+    .mission-process .step {
+        flex: 1 1 45%;
+        max-width: 100%;
+    }
+
+    .mission-process .step h2 {
+        font-size: 1.6em;
+    }
+}
+
+
+@media (max-width: 575px) {
+    #menu-open {
+        font-size: 1.5rem;
+        top: 20px; /* Use top for vertical positioning */
+        right: 20px; /* Keep it aligned to the right */
+    }
+
+    #menu-close {
+        font-size: 1.5rem;
+        top: 20px; /* Keep it aligned to the right */
+        right: 20px; /* Position it to the right */
+    }
+
+    nav ul.open {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 0;
+    }
+
+    nav ul.open {
+        width: 80%;
+    }
+    .logo p {
+        font-size: 22px; /* Smaller font size for very small screens */
+    }
+    
+    .mission-process h1 {
+        font-size: 1.8em;
+    }
+
+    .mission-process p {
+        font-size: 0.9em;
+    }
+
+    .mission-process .steps {
+        flex-direction: column;
+        min-width: 100%;
+        gap: 10px;
+    }
+
+    .mission-process .step {
+        flex: 1 1 100%;
+        margin: auto;
+    }
+
+    .mission-process .step i {
+        font-size: 2em;
+    }
+
+    .mission-process .step h2 {
+        font-size: 1.2em;
+    }
+
+    .mission-process .step p {
+        font-size: 0.8em;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .dog-hand {
+        max-width: 10%; /* Further increase the logo size for very small screens */
+    }
+
+    .logo-text {
+        font-size: 1.2rem; /* Further decrease text size for very small screens */
+    }
+    .mission-process .step {
+        flex: 1 1 45%;
+        min-width: 100%;
+    }
+
+    .mission-process{
+        padding: 5% 15%;
+    }
+    .mission-process .step h2 {
+        font-size: .6em;
+    }
+    .meet-team-section h2{
+        font-size: 1.5em;
+    }
+    .meet-team-section p{
+        font-size: .8em;
+    }
+    .mission-process .step h2 {
+        font-size: 1em;
+    }
+
+    .mission-process .step p {
+        font-size: 0.8em;
+    }
+    .meet-team-section-body{
+        padding:0 ;
+    }
+    .team-member{
+        padding: 0;
+    }
+
+
+    .team-member img {
+        width: 50%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+}
+

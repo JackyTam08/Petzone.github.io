@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <link rel="stylesheet" href="avaliablepet.css">
+    <script src="https://kit.fontawesome.com/68608b2f35.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/Images/Paw Images/paw_fav-removebg-preview.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Brown Paw Hands.png" alt="Dog Logo" class="dog-hand">
+            <p>PetZone</p>
+        </div>
+        <i class="fa-solid fa-bars" id="menu-open"></i>
+        <nav>
+            <ul>
+                <li><i class="fa-solid fa-x" id="menu-close"></i></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="AvaliablePet.html">Available Pets</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Adoption Process.html">Adoption Process</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Available Pets for Adoption</h1>
+
+        <!-- Search and Filter Section -->
+        <div class="filter-section">
+            <input type="text" id="search-bar" placeholder="Search by name or location..." oninput="filterPets()">
+        
+            <div class="filter-options">
+                <label for="breed-filter">Breed:</label>
+                <select id="breed-filter" onchange="filterPets()">
+                    <option value="">All Breeds</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Labrador">Labrador</option>
+                    <option value="German Shepherd">German Shepherd</option>
+                    <option value="Bulldog">Bulldog</option>
+                    <option value="Poodle">Poodle</option>
+                    <option value="Beagle">Beagle</option>
+                    <option value="Pomeranian">Pomeranian</option>
+                    <option value="Maltese">Maltese</option>
+                    <option value="Husky">Husky</option>
+                </select>
+        
+                <label for="age-filter">Age:</label>
+                <select id="age-filter" onchange="filterPets()">
+                    <option value="">All Ages</option>
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <option value="3">3 years</option>
+                    <option value="4">4 years</option>
+                    <option value="5">5 years</option>
+                    <option value="6">6 years</option>
+                </select>
+        
+                <label for="gender-filter">Gender:</label>
+                <select id="gender-filter" onchange="filterPets()">
+                    <option value="">All Genders</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <section class="pet-list" id="pet-list">
+            <!-- Example of pet cards -->
+            <div class="pet-card" data-breed="Golden Retriever" data-age="3" data-gender="Male" data-location="New York, NY">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="golden1.jpg" alt="Happy Dog">
+                <h2>Buddy</h2>
+                <p>Breed: Golden Retriever</p>
+                <p>Age: 3 years</p>
+                <p>Location: New York, NY</p>
+                <p>Gender: Male</p>
+                <button 
+                    onmouseover="handleMouseOver(this)" 
+                    onmouseout="handleMouseOut(this)" 
+                        onclick="adoptPet('Buddy', this)" class="adopt-me">Adopt Me
+                </button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>
+            </div>
+            
+
+            
+            <!-- Repeat structure for additional pets -->
+            <div class="pet-card" data-breed="Labrador" data-age="2" data-gender="Female" data-location="Los Angeles, CA">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="labrador1.jpg" alt="Playful Dog">
+                <h2>Luna</h2>
+                <p>Breed: Labrador</p>
+                <p>Age: 2 years</p>
+                <p>Location: Los Angeles, CA</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Luna',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+
+            </div>
+
+            <div class="pet-card" data-breed="Beagle" data-age="3" data-gender="Male" data-location="Los Angeles, CA">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="beagle1.jpg" alt="Playful Dog">
+                <h2>Max</h2>
+                <p>Breed: Beagle</p>
+                <p>Age: 3 years</p>
+                <p>Location: Los Angeles, CA</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Max', this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+
+            <div class="pet-card" data-breed="German Shepherd" data-age="4" data-gender="Female" data-location="Chicago, IL">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="german1.avif" alt="Playful Dog">
+                <h2>Bella</h2>
+                <p>Breed: German Shepherd</p>
+                <p>Age: 4 years</p>
+                <p>Location: Chicago, IL</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Bella',this)" class="adopt-me">Adopt Me</button>  
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>
+            </div>
+
+            <div class="pet-card" data-breed="Beagle" data-age="3" data-gender="Male" data-location="New York, NY">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="Beagle2.webp" alt="Playful Dog">
+                <h2>Charlie</h2>
+                <p>Breed: Beagle</p>
+                <p>Age: 3 years</p>
+                <p>Location: New York, NY</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Charlie',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+
+
+            <div class="pet-card" data-breed="Golden Retriever" data-age="1" data-gender="Female" data-location="Miami, FL">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="golden2.jpg" alt="Playful Dog">
+                <h2>Daisy</h2>
+                <p>Breed: Golden Retriever</p>
+                <p>Age: 1 year</p>
+                <p>Location: Miami, FL</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Daisy',this)" class="adopt-me">Adopt Me</button>  
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>
+            </div>
+            <div class="pet-card" data-breed="Bulldog" data-age="5" data-gender="Male" data-location="Seattle, WA">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="bulldog1.avif" alt="Playful Dog">
+                <h2>Rocky</h2>
+                <p>Breed: Bulldog</p>
+                <p>Age: 5 years</p>
+                <p>Location: Seattle, WA</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Rocky', this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="Poodle" data-age="3" data-gender="Female" data-location="Austin, TX">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="poodle1.jpg" alt="Playful Dog">
+                <h2>Cooper</h2>
+                <p>Breed: Poodle</p>
+                <p>Age: 3 years</p>
+                <p>Location: Austin, TX</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Cooper',this)" class="adopt-me">Adopt Me</button> 
+                <button class="view-more-btn" onclick="openModal(this)">View More</button> 
+            </div>
+            <div class="pet-card" data-breed="Shadow" data-age="5" data-gender="Male" data-location="Los Angeles, California">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="german2.webp" alt="Playful Dog">
+                <h2>Shadow</h2>
+                <p>Breed: German Shepherd</p>
+                <p>Age: 5 years</p>
+                <p>Location: Los Angeles, CA</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Shadow',this)" class="adopt-me">Adopt Me</button>  
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>
+            </div>
+            <div class="pet-card" data-breed="Labrador Retriever" data-age="4" data-gender="Female" data-location="Nashville, Tennessee">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="labrador2.webp" alt="Playful Dog">
+                <h2>Ruby</h2>
+                <p>Breed: Labrador Retriever</p>
+                <p>Age: 4 years</p>
+                <p>Location: Nashville, TN</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Ruby',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="Golden Retriever" data-age="5" data-gender="Male" data-location="Dallas, TX">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="golden3.webp" alt="Playful Dog">
+                <h2>Tucker</h2>
+                <p>Breed: Golden Retriever</p>
+                <p>Age: 5 years</p>
+                <p>Location: Dallas, TX</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Tucker',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="Husky" data-age="6" data-gender="Male" data-location="Minneapolis, Minnesota">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="husky1.webp" alt="Playful Dog">
+                <h2>Duke</h2>
+                <p>Breed: Husky</p>
+                <p>Age: 6 years</p>
+                <p>Location: Akron, OH</p>
+                <p>Gender: Male</p>
+                <button onclick="adoptPet('Duke',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="Pomeranian" data-age="4" data-gender="Female" data-location="Orlando, Florida">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="Pomeranian1.jpg" alt="Playful Dog">
+                <h2>Penny</h2>
+                <p>Breed: Pomeranian</p>
+                <p>Age: 4 years</p>
+                <p>Location: Orlando, FL</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Penny',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="Maltese" data-age="2" data-gender="Female" data-location="San Diego, California">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="maltese1.png" alt="Playful Dog">
+                <h2>Bella</h2>
+                <p>Breed: Maltese</p>
+                <p>Age: 2 years</p>
+                <p>Location: San Diego, CA</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Bella',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+            <div class="pet-card" data-breed="German Shepherd" data-age="3" data-gender="Female" data-location="Boston, Massachusetts">
+                <div class="heart" style="display: none;"><i class="fa-solid fa-heart"></i></div>
+                <img src="german3.webp" alt="Playful Dog">
+                <h2>Oscar</h2>
+                <p>Breed: German Shepherd</p>
+                <p>Age: 3 years</p>
+                <p>Location: Austin, TX</p>
+                <p>Gender: Female</p>
+                <button onclick="adoptPet('Cooper',this)" class="adopt-me">Adopt Me</button>
+                <button class="view-more-btn" onclick="openModal(this)">View More</button>  
+            </div>
+        </section>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img id="modal-img" alt="Dog Image">
+                <div class="modal-text">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-breed"></p>
+                    <p id="modal-age"></p>
+                    <p id="modal-location"></p>
+                    <p id="modal-gender"></p>
+                    <button class="adopt-btn">Adopt Me</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img id="modal-img" alt="Dog Image">
+                <div class="modal-text">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-breed"></p>
+                    <p id="modal-age"></p>
+                    <p id="modal-location"></p>
+                    <p id="modal-gender"></p>
+                    <button class="adopt-btn">Adopt Me</button>
+                </div>
+            </div>
+        </div>
+        <div class="spinner" id="spinner">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pet Adoption. All rights reserved.</p>
+    </footer>
+
+    <script src="avaliablepet.js"></script>
+</body>
+</html>

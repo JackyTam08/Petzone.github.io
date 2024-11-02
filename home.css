@@ -1,0 +1,318 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #885239;
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.dog-hand {
+    width: 100%; /* Allow it to take the full width of its container */
+    max-width: 50px; /* Set a maximum width to prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 8px;
+}
+
+.logo p {
+    font-size: 30px; /* Default font size */
+    margin: 0; /* Remove default margin */
+}
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4d8d75;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+    z-index: 9999;
+}
+
+nav ul.open {
+    width: 60%; /* Show on mobile */
+}
+
+nav ul li {
+    margin: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+/* Menu Open Icon */
+#menu-open {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 10000;
+}
+
+/* Menu Close Icon */
+#menu-close {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+/* Main Banner */
+.main-banner {
+    position: relative;
+    text-align: center;
+}
+
+.main-banner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    max-width: 90%;
+}
+
+.banner-text h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.cta-adopt {
+    background-color: white;
+    color: black;
+    margin-right: 1em;
+}
+
+.cta-home {
+    background-color: #4d8d75;
+    color: white;
+}
+
+/* footer section */
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center
+}
+
+.footer-links a, .social-media a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.fa-x {
+    margin-left: 5px;
+}
+
+
+
+/* Media Queries */
+
+/* Larger screens (992px and above) */
+@media (min-width: 1110px) {
+    nav ul {
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        background-color: #4d8d75;
+        height: auto;
+    }
+
+    #menu-open {
+        display: none; /* Hide burger menu on larger screens */
+    }
+}
+
+/* Medium screens (576px to 991px) */
+@media (max-width: 992px) {
+    #menu-open {
+        display: block; /* Show burger menu for medium/small screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 0;
+        height: 100%;
+        background-color: #4d8d75;
+    }
+
+    nav ul.open {
+        width: 60%;
+    }
+
+    #menu-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .banner-text h1 {
+        font-size: 6vw;
+    }
+
+    .text {
+        font-size: 3vw;
+    }
+
+    .cta-btn {
+        font-size: 3vw;
+    }
+    .logo p {
+        font-size: 26px; /* Even smaller font size */
+    }
+}
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+    .logo p {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    .dog-hand {
+        min-width: 12%; /* Increase the logo size for smaller screens */
+    }
+    footer p {
+        font-size: 1rem; /* Adjust paragraph font size for smaller screens */
+    }
+
+    footer a {
+        font-size: 0.9rem; /* Adjust link font size for smaller screens */
+    }
+    #menu-open {
+        font-size: 1.5rem;
+        top: 30px; /* Use top for vertical positioning */
+        right: 20px; /* Keep it aligned to the right */
+    }
+
+    #menu-close {
+        font-size: 1.5rem;
+        top: 20px; /* Keep it aligned to the right */
+        right: 20px; /* Position it to the right */
+    }
+
+    nav ul.open {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 0;
+    }
+
+    nav ul.open {
+        width: 80%;
+    }
+}
+
+
+/* Small screens (up to 575px) */
+@media (max-width: 575px) {
+    nav ul.open {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 0;
+    }
+
+    nav ul.open {
+        width: 80%;
+    }
+    .banner-text h1 {
+        font-size: 8vw;
+    }
+
+    .text {
+        font-size: 4vw;
+    }
+
+    .cta-btn {
+        font-size: 4vw;
+    }
+    .logo p {
+        font-size: 22px; /* Smaller font size for very small screens */
+    }
+    
+}
+
+
+@media (max-width: 480px) {
+    #menu-open {
+        top: 20.5px; /* Use top for vertical positioning */
+    }
+
+    .dog-hand{
+        max-width: 10%;
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Further adjust paragraph font size for very small screens */
+    }
+
+    footer a {
+        font-size: 0.8rem; /* Further adjust link font size for very small screens */
+    }
+}

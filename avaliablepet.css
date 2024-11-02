@@ -1,0 +1,501 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #885239;
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.dog-hand {
+    width: 100%; /* Allow it to take the full width of its container */
+    max-width: 50px; /* Set a maximum width to prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 8px;
+}
+
+.logo p {
+    font-size: 30px; /* Default font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4d8d75;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+    z-index: 9999;
+}
+
+nav ul.open {
+    width: 60%; /* Show on mobile */
+}
+
+nav ul li {
+    margin: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+/* Menu Open Icon */
+#menu-open {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 10000;
+}
+
+/* Menu Close Icon */
+#menu-close {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+
+/* Header */
+main {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:20px
+}
+
+main h1 {
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+/* Pet list section */
+.pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between cards */
+    margin: 20px 10px;
+    justify-content: flex-start; /* Aligns items to the start (left) */
+    margin-left: auto; /* Pushes the list to the right */
+    max-width: 85%; /* Optional: limit the width for better alignment */
+}
+
+
+.pet-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 17%; /* 5 cards per row */
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+    font-size: 24px;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Start hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for both */
+    cursor: pointer;
+}
+
+.heart.show {
+    visibility: visible; /* Makes it visible */
+    opacity: 1; /* Fully visible */
+}
+
+.pet-card img {
+    width: 100%;      /* Ensure the image takes the full width of the container */
+    height: 200px;    /* Set a fixed height for all images */
+    object-fit: cover; /* This ensures the image scales while keeping its aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.pet-card h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.pet-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.pet-card button {
+    margin-top: auto; /* Pushes button to the bottom of the card */
+    background-color: #4CAF50; /* Customize as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px; /* Allows button to have variable length */
+    margin-bottom: 2px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: auto; /* Pushes the button container to the bottom */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.filter-section input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.filter-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-options label {
+    font-size: 1em;
+}
+
+.filter-options select {
+    padding: 5px;
+    font-size: 1em;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px); /* Adds blur effect to the background */
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly dim the background with transparency */
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: white; /* Set background color to white */
+    display: flex;
+    width: 80%; /* Enlarge modal width */
+    max-width: 1000px; /* Larger max width */
+    height: auto; /* Allow modal height to adapt to content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px; /* Slightly round the corners */
+    overflow: hidden;
+    position: relative;
+    padding: 160px; /* Remove unnecessary padding */
+}
+
+.modal-content img {
+    max-width: 50%; /* Keep the image size proportional */
+    height: auto;
+    border-radius: 0;
+    margin: 0;
+    object-fit: cover;
+    
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    padding: 20px; /* Add padding inside the text container */
+    width: 60%; /* Keep text width proportional */
+    margin-left: 60px;
+}
+
+.modal-content h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 22px;
+    margin: 0 0 10px 0; /* Minimal margin for spacing */
+    color: #ffffff; /* Black text */
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 6px 0; /* Slightly reduced margin for text */
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal.fade-in {
+    display: flex;
+    opacity: 1;
+}
+
+.modal.fade-out {
+    opacity: 0;
+    display: none;
+}
+
+.adopt-btn {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    font-size: 18px; /* Larger font */
+    padding: 12px 24px; /* Padding for button size */
+    margin-top: 20px; /* Space above button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.loading-screen {
+    display: none; /* Initially hidden */
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Spinner styling */
+.spinner {
+    margin: 0 auto;
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Show the loading screen */
+.show-loading {
+    display: block;
+}
+
+
+
+/* Responsive Filter Section */
+
+@media (max-width: 1200px) {
+    .pet-card {
+        width: 22%; /* Adjust for smaller screens */
+    }
+}
+
+
+@media (min-width: 1110px) {
+    nav ul {
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        background-color: #4d8d75;
+        height: auto;
+    }
+
+    #menu-open {
+        display: none; /* Hide burger menu on larger screens */
+    }
+}
+
+
+@media (max-width: 992px) {
+    #menu-open {
+        display: block; /* Show burger menu for medium/small screens */
+    }
+    .pet-card {
+        width: 45%;
+    }
+    .logo p {
+        font-size: 26px; /* Even smaller font size */
+    }
+    nav ul {
+        flex-direction: column;
+        width: 0;
+        height: 100%;
+        background-color: #4d8d75;
+    }
+    nav ul.open {
+        width: 60%;
+    }
+    .view-more-btn{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .pet-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pet-card {
+        width: 90%;
+    }
+    .filter-section {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+    
+    .filter-section input[type="text"] {
+        width: 80%; /* Adjust width on smaller screens */
+    }
+    
+    .filter-options {
+        flex-direction: column; /* Stack select elements vertically */
+        width: 80%; /* Adjust width on smaller screens */
+    }
+    
+    .filter-options select {
+        width: 100%; /* Full width for select elements */
+    }
+    .logo p {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    
+    .dog-hand {
+        min-width: 12%; /* Increase the logo size for smaller screens */
+    }
+    .view-more-btn{
+        display: none;
+    }
+}
+
+
+@media (max-width: 575px) {
+    #menu-open {
+        font-size: 1.5rem;
+        top: 23px; /* Use top for vertical positioning */
+        right: 20px; /* Keep it aligned to the right */
+    }
+
+    #menu-close {
+        font-size: 1.5rem;
+        top: 20px; /* Keep it aligned to the right */
+        right: 20px; /* Position it to the right */
+    }
+
+    nav ul.open {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 0;
+    }
+
+    nav ul.open {
+        width: 80%;
+    }
+    .logo p {
+        font-size: 22px; /* Smaller font size for very small screens */
+    }
+    .view-more-btn{
+        display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #menu-open {
+        top: 20px; /* Use top for vertical positioning */
+    }
+    .dog-hand {
+        max-width: 10%; /* Further increase the logo size for very small screens */
+    }
+    main h1{
+        font-size: 1.6em;
+    }
+    .adopt-me{
+        margin-bottom: 3px;
+    }
+    .view-more-btn{
+        display: none;
+    }
+}
+
+
+
