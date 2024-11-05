@@ -125,6 +125,23 @@ function adoptPet(petName, button) {
         heart.style.display = "none"; // Hide after fade-out
     }
 }
+
+function adopt(button) {
+    const heartIcon = document.getElementById('heart-icon');
+    
+    if (button.textContent === "Adopt Me") {
+        button.textContent = "Adopted";
+        heartIcon.classList.add('show'); // Show the heart icon
+    } else {
+        button.textContent = "Adopt Me";
+        heartIcon.classList.remove('show'); // Hide the heart icon
+    }
+}
+
+
+
+
+
 // Function to handle mouse hover
 function handleMouseOver(button) {
     if (button.textContent === "Adopted") {
@@ -154,7 +171,7 @@ totalPets = [
         age: 2,
         gender: "Male",
         location: "Denver, CO",
-        image: "husky2.jpg"
+        image: "/Images/Dog Images/husky2.jpg"
     },
     {
         name: "Lily",
@@ -162,7 +179,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "Austin, TX",
-        image: "poodle2.jpg"
+        image: "/Images/Dog Images/poodle2.jpg"
     },
     {
         name: "Bella",
@@ -170,7 +187,7 @@ totalPets = [
         age: 4,
         gender: "Female",
         location: "Seattle, WA",
-        image: "golden4.jpg"
+        image: "/Images/Dog Images/golden4.jpg"
     },
     {
         name: "Max",
@@ -178,7 +195,7 @@ totalPets = [
         age: 1,
         gender: "Male",
         location: "Chicago, IL",
-        image: "beagle3.jpg"
+        image: "/Images/Dog Images/beagle3.jpg"
     },
     {
         name: "Bailey",
@@ -186,7 +203,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "Austin, TX",
-        image: "labrador4.webp" //change
+        image: "/Images/Dog Images/labrador4.webp" //change
     },
     {
         name: "Rex",
@@ -194,7 +211,7 @@ totalPets = [
         age: 4,
         gender: "Male",
         location: "Seattle, WA",
-        image: "german4.jpg" // change
+        image: "/Images/Dog Images/german4.jpg" // change
     },
     {
         name: "Bentley",
@@ -202,7 +219,7 @@ totalPets = [
         age: 5,
         gender: "Male",
         location: "Chicago, IL",
-        image: "beagle4.jpg" //change
+        image: "/Images/Dog Images/beagle4.jpg" //change
     },
     {
         name: "Oliver",
@@ -210,7 +227,7 @@ totalPets = [
         age: 1,
         gender: "Male",
         location: "Miami, FL",
-        image: "labrador3.avif" //change
+        image: "/Images/Dog Images/labrador3.avif" //change
     },
     {
         name: "Sophie",
@@ -218,7 +235,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "New York, NY",
-        image: "pomeranian2.jpg" //change
+        image: "/Images/Dog Images/pomeranian2.jpg" //change
     },
     {
         name: "Jake",
@@ -226,7 +243,7 @@ totalPets = [
         age: 5,
         gender: "Male",
         location: "San Francisco, CA",
-        image: "maltese2.jpg" //change
+        image: "/Images/Dog Images/maltese2.jpg" //change
     },
     // Add more pets here...
 ];
@@ -273,7 +290,6 @@ function loadMorePets() {
         page++; // Increment the page number to load the next set
     }, 1500); // Simulate delay for fetching data
 }
-
 
 // Infinite scrolling logic
 window.addEventListener('scroll', () => {
