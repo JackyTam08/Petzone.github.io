@@ -147,6 +147,25 @@ main h1 {
     opacity: 1; /* Fully visible */
 }
 
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 24px;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Start hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+}
+
+.heart-icon.show {
+    opacity: 1; /* Show when the 'show' class is added */
+    visibility: visible; /* Make it visible */
+}
+
+
+
 .pet-card img {
     width: 100%;      /* Ensure the image takes the full width of the container */
     height: 200px;    /* Set a fixed height for all images */
@@ -229,7 +248,7 @@ footer {
     font-size: 1em;
 }
 
-/* Modal Styles */
+/* Modal container styling */
 .modal {
     position: fixed;
     top: 0;
@@ -240,66 +259,95 @@ footer {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(8px); /* Adds blur effect to the background */
-    background-color: rgba(0, 0, 0, 0.2); /* Slightly dim the background with transparency */
-    display: none; /* Hidden by default */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background for more contrast */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    z-index: 1000; /* Ensure modal is on top */
 }
 
+/* Modal content styling */
 .modal-content {
-    background-color: white; /* Set background color to white */
+    background-color: white;
     display: flex;
-    width: 80%; /* Enlarge modal width */
-    max-width: 1000px; /* Larger max width */
-    height: auto; /* Allow modal height to adapt to content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 12px; /* Slightly round the corners */
+    flex-direction: row;
+    width: 90%;
+    max-width: 800px; /* Adjust max width for responsiveness */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
-    padding: 160px; /* Remove unnecessary padding */
+    padding: 20px; /* Reduced padding for compact appearance */
 }
 
-.modal-content img {
-    max-width: 50%; /* Keep the image size proportional */
+/* Container for image and heart icon */
+.modal-img-container {
+    position: relative;
+    width: 50%; /* Half of modal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.modal-img-container img {
+    width: 100%;
     height: auto;
-    border-radius: 0;
-    margin: 0;
+    border-radius: 12px;
     object-fit: cover;
-    
 }
 
+/* Heart icon styling */
+.heart-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px; /* Adjust distance from edges */
+    color: red;
+    font-size: 50px;
+    display: none; /* Hidden initially */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show the heart icon when needed */
+.heart-icon.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Modal text container styling */
 .modal-text {
+    width: 50%; /* Half of modal width */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the text */
-    padding: 20px; /* Add padding inside the text container */
-    width: 60%; /* Keep text width proportional */
-    margin-left: 60px;
+    justify-content: center;
+    color: #333; /* Dark text for readability */
 }
 
-.modal-content h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 22px;
-    margin: 0 0 10px 0; /* Minimal margin for spacing */
-    color: #ffffff; /* Black text */
+.modal-text h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgb(184, 182, 182);
 }
 
-.modal-content p {
+.modal-text p {
     font-size: 16px;
-    color: #ffffff;
-    margin: 6px 0; /* Slightly reduced margin for text */
+    margin: 8px 0;
+    color: rgb(202, 200, 200);
 }
 
+/* Close button styling */
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    color: #aaa;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
     cursor: pointer;
-    transition: color 0.2s ease;
 }
-
 .close-btn:hover {
     color: #333;
 }
