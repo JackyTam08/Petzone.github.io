@@ -244,6 +244,12 @@ footer a:hover {
 .footer-links{
     list-style: none;
 }
+
+.footer-links li{
+   padding-bottom: 5px; 
+}
+
+
 .footer-bottom {
     margin-top: 30px;
     font-size: 14px;
