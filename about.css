@@ -128,6 +128,10 @@ nav ul li a {
     font-size: 1.5em;
 }
 
+.hero a {
+    text-decoration: none; /* Remove the underline */
+    color: white;          /* Change text color to white */
+}
 
 .hero-text button {
     background-color: #4d8d75;
