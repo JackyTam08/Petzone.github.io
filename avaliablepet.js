@@ -171,7 +171,7 @@ totalPets = [
         age: 2,
         gender: "Male",
         location: "Denver, CO",
-        image: "/Images/Dog Images/husky2.jpg"
+        image: "husky2.jpg"
     },
     {
         name: "Lily",
@@ -179,7 +179,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "Austin, TX",
-        image: "/Images/Dog Images/poodle2.jpg"
+        image: "poodle2.jpg"
     },
     {
         name: "Bella",
@@ -187,7 +187,7 @@ totalPets = [
         age: 4,
         gender: "Female",
         location: "Seattle, WA",
-        image: "/Images/Dog Images/golden4.jpg"
+        image: "golden4.jpg"
     },
     {
         name: "Max",
@@ -195,7 +195,7 @@ totalPets = [
         age: 1,
         gender: "Male",
         location: "Chicago, IL",
-        image: "/Images/Dog Images/beagle3.jpg"
+        image: "beagle3.jpg"
     },
     {
         name: "Bailey",
@@ -203,7 +203,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "Austin, TX",
-        image: "/Images/Dog Images/labrador4.webp" //change
+        image: "labrador4.webp" //change
     },
     {
         name: "Rex",
@@ -211,7 +211,7 @@ totalPets = [
         age: 4,
         gender: "Male",
         location: "Seattle, WA",
-        image: "/Images/Dog Images/german4.jpg" // change
+        image: "german4.jpg" // change
     },
     {
         name: "Bentley",
@@ -219,7 +219,7 @@ totalPets = [
         age: 5,
         gender: "Male",
         location: "Chicago, IL",
-        image: "/Images/Dog Images/beagle4.jpg" //change
+        image: "beagle4.jpg" //change
     },
     {
         name: "Oliver",
@@ -227,7 +227,7 @@ totalPets = [
         age: 1,
         gender: "Male",
         location: "Miami, FL",
-        image: "/Images/Dog Images/labrador3.avif" //change
+        image: "labrador3.avif" //change
     },
     {
         name: "Sophie",
@@ -235,7 +235,7 @@ totalPets = [
         age: 3,
         gender: "Female",
         location: "New York, NY",
-        image: "/Images/Dog Images/pomeranian2.jpg" //change
+        image: "pomeranian2.jpg" //change
     },
     {
         name: "Jake",
@@ -243,7 +243,7 @@ totalPets = [
         age: 5,
         gender: "Male",
         location: "San Francisco, CA",
-        image: "/Images/Dog Images/maltese2.jpg" //change
+        image: "maltese2.jpg" //change
     },
     // Add more pets here...
 ];
